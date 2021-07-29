@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: kafka-spring-boot-manual-offset-commit
+  kafka:
+    bootstrap-servers: localhost:29092
+    #    listener:
+    #      ack-mode:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties.spring.json.trusted.packages: com.mafei.example.bean
+server:
+  port: 8081

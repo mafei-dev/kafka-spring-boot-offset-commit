@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: kafka-spring-boot-manual-offset-commit
+  kafka:
+    bootstrap-servers: localhost:29092
+    #    listener:
+    #      ack-mode:
+    consumer:
+      group-id: ${spring.application.name}
+      #      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties.spring.json.trusted.packages: com.mafei.example.bean
+server:
+  port: 8082
